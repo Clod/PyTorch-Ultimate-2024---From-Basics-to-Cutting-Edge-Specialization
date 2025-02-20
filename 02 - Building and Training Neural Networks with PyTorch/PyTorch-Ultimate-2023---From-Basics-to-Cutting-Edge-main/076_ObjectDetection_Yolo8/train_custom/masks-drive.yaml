@@ -1,0 +1,8 @@
+train: ../../train
+val: ../../val
+test: ../../train
+
+# Classes
+nc: 3  # number of classes
+names: ['with_mask', 'without_mask', 'mask_weared_incorrect']
+

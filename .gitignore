@@ -1,0 +1,67 @@
+# Compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Jupyter Notebook checkpoint files
+.ipynb_checkpoints/
+
+# macOS system files
+.DS_Store
+
+# PyTorch related files
+*.pt
+*.pth
+*.ckpt
+
+# Data and log files
+data/
+logs/
+runs/
+test/
+train/
+val/
+images/
+annotations/
+yolov7/
+.vector_cache/
+tweets_X.pkl
+ind.pubmed*
+!350_SemiSupervised/data/train/
+!350_SemiSupervised/data/test/
+
+# Environment files
+.env
+myvenv/
+venv/
+env/
+ENV/
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# OS generated files
+Thumbs.db
+
+# Compiled object code
+*.o
+*.obj
+*.so
+*.dll
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+
+# Log files
+*.log
+
+# VSCode settings
+.vscode/
+
+# Ignore the existing .gitignore file in the submodule
+02 - Building and Training Neural Networks with PyTorch/PyTorch-Ultimate-2023---From-Basics-to-Cutting-Edge-main/.gitignore

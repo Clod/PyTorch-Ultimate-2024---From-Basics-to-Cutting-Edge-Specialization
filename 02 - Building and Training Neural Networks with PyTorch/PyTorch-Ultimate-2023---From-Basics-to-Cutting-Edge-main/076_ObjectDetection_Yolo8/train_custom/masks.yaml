@@ -1,0 +1,8 @@
+train: /Users/claudiograsso/Documents/Cursos AI/Building and Training Neural Networks with PyTorch/PyTorch-Ultimate-2023---From-Basics-to-Cutting-Edge-main/075_ObjectDetection_Yolo7/yolov7/train
+val: /Users/claudiograsso/Documents/Cursos AI/Building and Training Neural Networks with PyTorch/PyTorch-Ultimate-2023---From-Basics-to-Cutting-Edge-main/075_ObjectDetection_Yolo7/yolov7/val
+test: /Users/claudiograsso/Documents/Cursos AI/Building and Training Neural Networks with PyTorch/PyTorch-Ultimate-2023---From-Basics-to-Cutting-Edge-main/075_ObjectDetection_Yolo7/yolov7/train
+
+# Classes
+nc: 3  # number of classes
+names: ['with_mask', 'without_mask', 'mask_weared_incorrect']
+

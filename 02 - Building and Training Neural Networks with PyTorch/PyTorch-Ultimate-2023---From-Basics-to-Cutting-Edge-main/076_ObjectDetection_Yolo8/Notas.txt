@@ -1,0 +1,152 @@
+Por algún motivo misterioso en Colab me baja la versión:
+
+yolo11n.pt 
+
+cuando ejecuto:
+
+model = YOLO("yolov8n.pt")
+
+y las prediccionas no andan. Pruebo explícitamente en la mac
+con esa versión para ver si es ese el problema.
+
+Con GPU mask_weared_incorrect
+5 epochs completed in 0.289 hours.
+Optimizer stripped from runs/detect/train3/weights/last.pt, 5.6MB
+Optimizer stripped from runs/detect/train3/weights/best.pt, 5.6MB
+
+Validating runs/detect/train3/weights/best.pt...
+Ultralytics 8.3.9 🚀 Python-3.12.6 torch-2.4.1 MPS (Apple M2 Pro)
+Model summary (fused): 186 layers, 2,684,953 parameters, 0 gradients, 6.8 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   0%|          | 0/13 [00:00<?, ?iWARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):   8%|▊         | 1/13 [00:09<01:58WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  15%|█▌        | 2/13 [00:17<01:33WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  23%|██▎       | 3/13 [00:27<01:33WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  31%|███       | 4/13 [00:36<01:21WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  38%|███▊      | 5/13 [00:42<01:03WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  46%|████▌     | 6/13 [00:49<00:53WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  54%|█████▍    | 7/13 [00:56<00:45WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  62%|██████▏   | 8/13 [01:00<00:30WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  69%|██████▉   | 9/13 [01:07<00:26WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  77%|███████▋  | 10/13 [01:11<00:1WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95):  85%|████████▍ | 11/13 [01:14<00:0WARNING ⚠️ NMS time limit 2.400s exceeded
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 13/13 [01:25<00:0
+                   all        100        481      0.873      0.282      0.324      0.207
+             with_mask         91        311      0.767      0.576      0.594      0.398
+          without_mask         34        156      0.852      0.269      0.332      0.191
+ mask_weared_incorrect         12         14          1          0      0.047     0.0318
+Speed: 3.0ms preprocess, 198.0ms inference, 0.0ms loss, 352.6ms postprocess per image
+Results saved to runs/detect/train3
+Ultralytics 8.3.9 🚀 Python-3.12.6 torch-2.4.1 CPU (Apple M2 Pro)
+Model summary (fused): 186 layers, 2,684,953 parameters, 0 gradients, 6.8 GFLOPs
+
+PyTorch: starting from 'runs/detect/train3/weights/best.pt' with input shape (1, 3, 512, 512) BCHW and output shape(s) (1, 7, 5376) (5.3 MB)
+
+TorchScript: starting export with torch 2.4.1...
+TorchScript: export success ✅ 0.9s, saved as 'runs/detect/train3/weights/best.torchscript' (10.6 MB)
+
+Export complete (1.0s)
+Results saved to /Users/claudiograsso/Documents/Cursos AI/Building and Training Neural Networks with PyTorch/PyTorch-Ultimate-2023---From-Basics-to-Cutting-Edge-main/076_ObjectDetection_Yolo8/runs/detect/train3/weights
+Predict:         yolo predict task=detect model=runs/detect/train3/weights/best.torchscript imgsz=512  
+Validate:        yolo val task=detect model=runs/detect/train3/weights/best.torchscript imgsz=512 data=/Users/claudiograsso/Documents/Cursos AI/Building and Training Neural Networks with PyTorch/PyTorch-Ultimate-2023---From-Basics-to-Cutting-Edge-main/076_ObjectDetection_Yolo8/train_custom/masks.yaml  
+
+
+--------------------------------------------------
+Con CPU
+5 epochs completed in 0.108 hours.
+Optimizer stripped from runs/detect/train4/weights/last.pt, 5.6MB
+Optimizer stripped from runs/detect/train4/weights/best.pt, 5.6MB
+
+Validating runs/detect/train4/weights/best.pt...
+Ultralytics 8.3.9 🚀 Python-3.12.6 torch-2.4.1 CPU (Apple M2 Pro)
+Model summary (fused): 186 layers, 2,684,953 parameters, 0 gradients, 6.8 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 13/13 [00:02<00:00,  5.01it/s]
+                   all        100        481      0.903      0.489      0.569      0.357
+             with_mask         91        311      0.827      0.865      0.909       0.62
+          without_mask         34        156      0.881      0.603      0.768      0.431
+ mask_weared_incorrect         12         14          1          0     0.0315     0.0202
+Speed: 0.2ms preprocess, 16.3ms inference, 0.0ms loss, 1.2ms postprocess per image
+Results saved to runs/detect/train4
+Ultralytics 8.3.9 🚀 Python-3.12.6 torch-2.4.1 CPU (Apple M2 Pro)
+Model summary (fused): 186 layers, 2,684,953 parameters, 0 gradients, 6.8 GFLOPs
+
+PyTorch: starting from 'runs/detect/train4/weights/best.pt' with input shape (1, 3, 512, 512) BCHW and output shape(s) (1, 7, 5376) (5.3 MB)
+
+TorchScript: starting export with torch 2.4.1...
+TorchScript: export success ✅ 0.7s, saved as 'runs/detect/train4/weights/best.torchscript' (10.6 MB)
+
+Export complete (0.8s)
+Results saved to /Users/claudiograsso/Documents/Cursos AI/Building and Training Neural Networks with PyTorch/PyTorch-Ultimate-2023---From-Basics-to-Cutting-Edge-main/076_ObjectDetection_Yolo8/runs/detect/train4/weights
+Predict:         yolo predict task=detect model=runs/detect/train4/weights/best.torchscript imgsz=512  
+Validate:        yolo val task=detect model=runs/detect/train4/weights/best.torchscript imgsz=512 data=/Users/claudiograsso/Documents/Cursos AI/Building and Training Neural Networks with PyTorch/PyTorch-Ultimate-2023---From-Basics-to-Cutting-Edge-main/076_ObjectDetection_Yolo8/train_custom/masks.yaml 
+
+Batch = 32 (los anteriores eran con batch=4)
+5 epochs completed in 0.070 hours.
+
+batch = 64
+5 epochs completed in 0.051 hours.
+
+----------------------------------------------------------------------
+
+from ultralytics import YOLO
+import torch
+import os
+
+# Get the current script's directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Load the model
+model = YOLO("yolov8n.pt")  # load a pretrained model (recommended for training)
+# model = YOLO("yolo11n.pt")
+# Check if MPS is available
+device = 'mps' if torch.backends.mps.is_available() else 'cpu'
+print(f"Using device: {device}")
+
+# Construct the absolute path to the data file
+data_path = os.path.join(current_dir, "train_custom", "masks.yaml")
+print(f"Data path: {data_path}")
+
+# Train the model
+results = model.train(
+    data=data_path,
+    epochs=5,
+    imgsz=512,
+    batch=64,
+    verbose=True,
+    device=device
+)
+
+# Export the model
+model.export()
+
+# Verify CUDA availability (for reference)
+# print(f"CUDA available: {torch.cuda.is_available()}")
+
+-----------------------------------------------------------------
+Cambié de CPU batch=4
+a MPU batch=32 y se rompió (siempre un solo EPOCH)
+
+pruebo con CPU y batch=32 ROTO
+
+ahora con MPS batch=4  ANDA
+
+ahora con MPS batch=16 ROTO
+
+ahora con MPS batch=8 ROTO
+
+vuelvo a 4 con MPS y vuelve a andar
+
+Ahora voy a probar con yolo11n ANDA
+
+Definitivamente el problema es el tamaño del BATCH!!!!
+
+
+Para entrenar en Colab con los archivos en local:
+train: /content/yolov8/train
+val: /content/yolov8/val
+test: /content/yolov8/test
+
+# Classes
+nc: 3  # number of classes
+names: ['with_mask', 'without_mask', 'mask_weared_incorrect']
+
+
